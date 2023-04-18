@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.header {
+  display: inline-flex;
+  content: inherit;
+}
+
+#random-quote {
+  width: 100px;
+  height: 40px;
+  margin-left: 70px;
+  margin-top: 24px;
+  background-color: aqua;
+}
+#quotes {
+  margin-top: 60px;
+}
