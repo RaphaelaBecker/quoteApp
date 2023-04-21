@@ -1,3 +1,5 @@
+"use strict";
+
 let quotes = [];
 const quoteButton = document.querySelector("button");
 const quoteli = document.querySelector("#quotelist");
@@ -15,8 +17,7 @@ function randomQuote() {
     .then((data) => {
       const newQuote = data.quote;
       const newAuthor = data.author;
-      randomList = [newQuote, newAuthor];
-      quotes = randomList;
+      quotes = [newQuote, "–– " + newAuthor];
       renderQuoteApp();
     });
 }
@@ -24,11 +25,10 @@ function randomQuote() {
 function renderQuoteApp() {
   quoteli.innerHTML = "";
   const newQuoteLi = document.createElement("li");
-  const quoteText = document.createTextNode(quoteli);
+  const quoteText = document.createTextNode(quotes[0]);
   newQuoteLi.append(quoteText);
-  const newAuthorInDiv = document.createElement("div");
-  author.innerText = quotes;
-  quotes.appendChild(newAuthorInDiv);
+  quoteli.append(newQuoteLi);
+  author.innerText = quotes[1];
 }
 
 quoteButton.addEventListener("click", function () {
